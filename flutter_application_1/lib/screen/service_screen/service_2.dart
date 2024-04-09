@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Calaendar.dart';
 
 class service_2 extends StatelessWidget {
-  const service_2({super.key});
+  DateTime selected = DateTime.now();
+  service_2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,9 @@ class service_2 extends StatelessWidget {
               Container(
                 height: 400,
                 width: 300,
-                child: Calendar(),
+                child: Calendar(
+                  [2],
+                ),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white),

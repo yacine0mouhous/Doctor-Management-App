@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Calaendar.dart';
+import 'package:flutter_application_1/widget/calendar_menu.dart';
 
 import 'package:flutter_application_1/widget/custom_Appbar.dart';
 import 'package:flutter_application_1/widget/servicelist.dart';
 
 class home_screen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
+  DateTime next_appoitement = DateTime(2024, 4, 21);
   home_screen({super.key});
 
   @override
@@ -81,11 +82,11 @@ class home_screen extends StatelessWidget {
                             child: Center(
                                 child: Text(
                               "your next appoitement is on : " +
-                                  DateTime.now().day.toString() +
+                                  next_appoitement.day.toString() +
                                   "/" +
-                                  DateTime.now().month.toString() +
+                                  next_appoitement.month.toString() +
                                   "/" +
-                                  DateTime.now().year.toString(),
+                                  next_appoitement.year.toString(),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -158,8 +159,8 @@ class home_screen extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
-                    child: const Center(
-                      child: Calendar(),
+                    child: Center(
+                      child: Calendar_menu([5], next_appoitement),
                     ),
                   ),
                 ),

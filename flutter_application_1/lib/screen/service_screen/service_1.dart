@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Calaendar.dart';
 
 class service_1 extends StatelessWidget {
-  const service_1({super.key});
+  DateTime selected_appoitement = DateTime.now();
+  service_1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +79,7 @@ class service_1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "disclaimer ",
+                      selected_appoitement.toString(),
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.red,
@@ -94,27 +95,14 @@ class service_1 extends StatelessWidget {
               ),
               Container(
                 height: 400,
-                width: 300,
-                child: Calendar(),
+                width: 350,
+                child: Calendar([1]),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white),
               ),
               SizedBox(
                 height: 10,
-              ),
-              Container(
-                height: 70,
-                width: 300,
-                child: Center(
-                    child: Text(
-                  "take appointement !",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.red,
-                ),
               ),
               SizedBox(
                 height: 30,
