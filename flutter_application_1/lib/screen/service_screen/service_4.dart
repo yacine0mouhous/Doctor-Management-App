@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/Calaendar.dart';
 
 class service_4 extends StatelessWidget {
-  DateTime selected = DateTime.now();
+  DateTime selected_appoitement = DateTime.now();
   service_4({super.key});
 
   @override
@@ -32,7 +32,7 @@ class service_4 extends StatelessWidget {
                     width: 60,
                   ),
                   Text(
-                    "service 4 ",
+                    "service 4",
                     style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'special',
@@ -55,7 +55,7 @@ class service_4 extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(13),
                     child: Text(
-                      "this service work on the current days : all days ",
+                      "this service work on the current days : monday friday  ",
                       style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'special',
@@ -79,7 +79,7 @@ class service_4 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "disclaimer ",
+                      selected_appoitement.toString(),
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.red,
@@ -95,29 +95,14 @@ class service_4 extends StatelessWidget {
               ),
               Container(
                 height: 400,
-                width: 300,
-                child: Calendar(
-                  [4],
-                ),
+                width: 350,
+                child: Calendar([4]),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white),
               ),
               SizedBox(
                 height: 10,
-              ),
-              Container(
-                height: 70,
-                width: 300,
-                child: Center(
-                    child: Text(
-                  "take appointement !",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.red,
-                ),
               ),
               SizedBox(
                 height: 30,
